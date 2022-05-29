@@ -1,2 +1,0 @@
-# DuartDouglas.github.io
-Portfólio
