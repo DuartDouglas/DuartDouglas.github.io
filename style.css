@@ -23,6 +23,13 @@
 
 }
 
+html,
+body {
+   width: 100%;
+   height: 100%;
+   background-color: var(--brand-green-light);
+}
+
 body {
    font-family: 'DM Sans', sans-serif;
 }
@@ -177,16 +184,17 @@ nav {
    background: var(--brand-green-light);
    display: flex;
    flex-direction: column;
+   /* width: 100vw; */
+   padding-inline: var(--margin-wrapper-mobile);
 }
 
 #home div {
    display: flex;
    flex-direction: column;
    align-items: center;
-   padding-inline: var(--margin-wrapper-mobile);
 }
 
-#home div h3 {
+#home #main h3 {
    color: var(--brand-green);
    font-weight: bold;
    font-size: 1.4rem;
@@ -196,17 +204,16 @@ nav {
    margin-top: 4.1rem;
 }
 
-#home div h1 {
+#home #main h1 {
    text-align: center;
    color: var(--gray-headline);
    font-weight: bold;
    font-size: 3.4rem;
    line-height: 4.4rem;
-
    margin-top: 1.6rem;
 }
 
-#home div p {
+#home #main p {
    text-align: center;
    color: var(--gray-paragraph);
    font-weight: 400;
@@ -215,7 +222,7 @@ nav {
    margin-top: 2.4rem;
 }
 
-#home div button {
+#home #main button {
    margin-top: 3.2rem;
 
    display: flex;
@@ -237,6 +244,8 @@ nav {
 
 #home img {
    margin-inline: var(--margin-wrapper-mobile);
+   max-width: 100%;
+   object-position: 0 4rem ;
 }
 
 /*==================== STATS =======================*/
@@ -244,11 +253,16 @@ nav {
 #stats {
    background: var(--brand-beige);
    margin-inline: var(--margin-wrapper-mobile);
-   text-align: center;
+   padding-block: 4rem;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   gap: 6rem;
 }
 
 #stats h2 {
    color: var(--gray-headline);
+   text-align: center;
    font-weight: bold;
    font-size: 4.8rem;
    line-height: 6.2rem;
@@ -261,8 +275,73 @@ nav {
    line-height: 2.4rem;
 }
 
+/*==================== Serviços =======================*/
 
-/*parei nessa parte*/
+#services {
+   background: var(--brand-green-light-02);
+   text-align: center;
+
+   margin-top: -20rem;
+   position: relative;
+   z-index: -1;
+}
+
+#services h2 {
+   color: var(--brand-green);
+   font-weight: bold;
+   font-size: 1.4rem;
+   line-height: 2.1rem;
+   text-transform: uppercase;
+
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   margin: var(--margin-wrapper-mobile);
+   
+   padding-top: 30rem;
+}
+
+#services h3 {
+   color: var(--gray-headline);
+   font-weight: bold;
+   font-size: 3rem;
+   line-height: 3.9rem;
+   
+   margin-bottom: 6rem;
+}
+
+.service {
+   background: var(--white);
+   margin: var(--margin-wrapper-mobile);
+   margin-top: 3.2rem;
+   padding: 2.4rem;
+
+   text-align: left;
+
+   display: flex;
+   flex-direction: column;
+   gap: 1.6rem;
+
+   border: 1px solid var(--brand-green-light);
+   border-radius: 0.6rem;
+}
+
+#service h4 {
+   color: var(--gray-headline);
+   font-weight: bold;
+   font-size: 2.4rem;
+   line-height: 3.1rem;
+}
+
+#service p {
+   color: var(--gray-paragraph);
+   font-weight: 400;
+   font-size: 1.6rem;
+   line-height: 2.4rem;
+}
+
+
+ 
 
 
 
@@ -271,7 +350,7 @@ nav {
 /*==================== versão desk =======================*/
 /*========================================================*/
 
-@media (min-width: 1000px) {
+@media (min-width: 1050px) {
    #bt-OpenMenu {
       display: none;
    }
@@ -345,17 +424,19 @@ nav {
 
    /*================ HOME ==================*/
    
-   #home img {
-      margin-inline: initial;
-      height: 100vh;
-   }
-
+   
    #home {
       display: flex;
       flex-direction: row;
       padding-inline: var(--margin-wrapper);
+      height: 100vh;
    }
    
+   #home img {
+      margin-inline: initial;
+      object-position: 0 5rem;
+   }
+
    #home div {
       display: flex;
       align-items: baseline;
@@ -371,4 +452,43 @@ nav {
       font-size: 5rem;
       line-height: 6.8rem;
    }
+/*========================== STATS =====================*/
+   #stats {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      margin-inline: var(--margin-wrapper);
+      padding: 6rem 12rem;
+
+   }
+
+   .stat-one {
+      padding-inline: auto;
+   }
+
+   .stat-two {
+      padding-inline:auto;
+   }
+
+   .stat-center {
+      border-inline: 2px solid var(--brand-green);
+      padding-inline: 10rem;
+   }
+
+/*========================== SERVICES =====================*/
+   .col-A {
+      display: flex;
+   }
+
+   .col-B {
+      display: flex;
+   }
+
+   #services h3 {
+      font-size: 4rem;
+      line-height: 5.2rem;
+   }
 }
+
