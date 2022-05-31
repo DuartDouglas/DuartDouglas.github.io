@@ -8,7 +8,7 @@ function showNavOnScroll() {
   }
 }
 
-/*=================FUNÇÃO ABRIR E FECHAR MENU=========================*/
+
 const btOpenMenu = document.getElementById('bt-OpenMenu');
 function openMenu() {
   const btOpenMenu = document.getElementById('body');
@@ -23,4 +23,14 @@ function closeMenu() {
   btCloseMenu.classList.remove('openMenu');
 }
 btCloseMenu.addEventListener('click', closeMenu);
-/*===================================================================*/
+
+
+window.addEventListener('scroll', showBackToTopButtonOnScroll);
+showBackToTopButtonOnScroll()
+function showBackToTopButtonOnScroll() {
+  if (scrollY > 500) {
+      backToTopButton.classList.add('show')
+  } else {
+      backToTopButton.classList.remove('show')
+  }
+}

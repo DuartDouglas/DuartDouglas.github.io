@@ -43,6 +43,11 @@ body {
    align-items: center;
    justify-content: space-between;
    padding-inline: 2.5rem;
+
+   position: fixed;
+   top: 0;
+   width: 100vw;
+   z-index: 100;
 }
 
 #menu {
@@ -180,6 +185,7 @@ nav {
    display: flex;
    flex-direction: column;
    padding-inline: var(--margin-wrapper-mobile);
+   padding-top: calc(4.1rem + var(--header-height));
 }
 
 #home div {
@@ -195,7 +201,7 @@ nav {
    line-height: 2.1rem;
    letter-spacing: .2rem;
 
-   margin-top: 4.1rem;
+   /* margin-top: 4.1rem; */
 }
 
 #home #main h1 {
@@ -457,6 +463,23 @@ nav {
 
 }
 
+#backToTopButton {
+    position: fixed;
+    bottom: 1rem;
+    right: 2.3rem;
+
+    opacity: 0;
+    visibility: hidden;
+
+    transform: translateY(100%);
+    transition: 500ms;
+}
+
+#backToTopButton.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
 
 /*========================================================*/
 /*==================== versão desk =======================*/
